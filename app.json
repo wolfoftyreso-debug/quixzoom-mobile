@@ -1,32 +1,43 @@
 {
   "expo": {
-    "name": "quixzoom-mobile",
-    "slug": "quixzoom-mobile",
+    "name": "quiXzoom",
+    "slug": "quixzoom",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0A0A1B"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.wavult.quixzoom",
+      "infoPlist": {
+        "NSCameraUsageDescription": "quiXzoom behöver kameran för att ta uppdragsbilder",
+        "NSLocationWhenInUseUsageDescription": "quiXzoom behöver din position för att visa uppdrag nära dig",
+        "NSLocationAlwaysUsageDescription": "quiXzoom behöver din position för att notifiera om uppdrag nära dig"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A1B"
       },
-      "predictiveBackGestureEnabled": false
+      "package": "com.wavult.quixzoom",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
+      "expo-camera",
+      "expo-location",
       "expo-secure-store"
     ]
   }
